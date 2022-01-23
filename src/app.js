@@ -3,6 +3,8 @@ import config from 'config'
 import logger from 'morgan'
 import cors from 'cors'
 
+import './database/mongoose'
+
 import { name } from '../package.json'
 import allRoutes from './routes'
 
