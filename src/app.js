@@ -5,7 +5,6 @@ import cors from 'cors'
 
 import './database/mongoose'
 
-import { name } from '../package.json'
 import allRoutes from './routes'
 
 const app = express()
@@ -16,13 +15,6 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.use(logger(config.get('server.logger')))
-
-app.get('/', (_, res) => {
-  res.status(200).json({
-    status: 'OK 200',
-    message: name,
-  })
-})
 
 app.use('/api', allRoutes)
 

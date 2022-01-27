@@ -3,7 +3,7 @@ import ENV from '../src/setupENV'
 export const env = 'local'
 
 export const server = {
-  port: 4000,
+  port: 8000,
   domain: 'localhost',
   logger: ':method :url :status :response-time ms - :res[content-length]',
 }
