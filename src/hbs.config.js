@@ -1,3 +1,5 @@
+import path from 'path'
+
 import { engine } from 'express-handlebars'
 import app from './app'
 
@@ -7,12 +9,13 @@ app.engine(
   extname,
   engine({
     extname,
+    partialsDir: path.join('src', 'views', 'components'),
   })
 )
 
 app.set('view engine', extname)
 
-app.set('views', 'src/views')
+app.set('views', path.join('src', 'views'))
 
 app.get('/', (req, res) => {
   res.render('home')
